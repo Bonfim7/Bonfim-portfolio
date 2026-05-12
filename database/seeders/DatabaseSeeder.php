@@ -28,7 +28,8 @@ class DatabaseSeeder extends Seeder
             ['name' => 'Laravel', 'icon' => 'fa-brands fa-laravel', 'category' => 'Backend', 'level' => 90],
             ['name' => 'JavaScript', 'icon' => 'fa-brands fa-js', 'category' => 'Frontend', 'level' => 85],
             ['name' => 'MySQL', 'icon' => 'fa-solid fa-database', 'category' => 'Database', 'level' => 80],
-            ['name' => 'TailwindCSS', 'icon' => 'fa-brands fa-css3-alt', 'category' => 'Frontend', 'level' => 85],
+            ['name' => 'CSS', 'icon' => 'fa-brands fa-css3-alt', 'category' => 'Frontend', 'level' => 85],
+            ['name' => 'HTML', 'icon' => 'fa-brands fa-html5', 'category' => 'Frontend', 'level' => 90],
             ['name' => 'Docker', 'icon' => 'fa-brands fa-docker', 'category' => 'DevOps', 'level' => 75],
             ['name' => 'Git', 'icon' => 'fa-brands fa-git-alt', 'category' => 'DevOps', 'level' => 90],
         ];

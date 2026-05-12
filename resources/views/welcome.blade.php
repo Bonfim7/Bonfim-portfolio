@@ -57,30 +57,25 @@
 
     <section id="skills" class="py-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-3xl font-bold mb-4">Minhas Habilidades</h2>
-                <div class="w-20 h-1 bg-primary mx-auto rounded-full"></div>
+            <div class="text-center mb-4 uppercase tracking-widest text-sm text-primary font-semibold" data-aos="fade-up">
+                Tecnologias
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="text-center mb-16" data-aos="fade-up" data-aos-delay="100">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Tecnologias que utilizo</h2>
+            </div>
+            
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+                @php $delay = 0; @endphp
                 @foreach($technologies as $category => $techs)
-                    <div class="glass p-8 rounded-2xl" data-aos="fade-up" data-aos-delay="{{ $loop->index * 100 }}">
-                        <h3 class="text-xl font-bold mb-6 flex items-center text-primary">
-                            <i class="fa-solid fa-code mr-3"></i> {{ $category }}
-                        </h3>
-                        <div class="space-y-6">
-                            @foreach($techs as $tech)
-                                <div>
-                                    <div class="flex justify-between mb-2">
-                                        <span class="font-medium"><i class="{{ $tech->icon }} mr-2"></i> {{ $tech->name }}</span>
-                                        <span class="text-slate-500">{{ $tech->level }}%</span>
-                                    </div>
-                                    <div class="w-full bg-slate-800 rounded-full h-2">
-                                        <div class="bg-primary h-2 rounded-full" style="width: {{ $tech->level }}%"></div>
-                                    </div>
-                                </div>
-                            @endforeach
+                    @foreach($techs as $tech)
+                        <div class="glass p-6 rounded-3xl flex flex-col items-center justify-center aspect-square group hover:-translate-y-2 hover:border-primary/50 hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:shadow-primary/20 transition-all duration-300 cursor-default" data-aos="fade-up" data-aos-delay="{{ $delay }}">
+                            <div class="w-16 h-16 mb-4 flex items-center justify-center rounded-2xl bg-slate-800/50 group-hover:bg-primary/10 transition-colors duration-300">
+                                <i class="{{ $tech->icon }} text-4xl text-slate-300 group-hover:text-primary transition-colors duration-300"></i>
+                            </div>
+                            <span class="font-semibold text-slate-300 group-hover:text-white transition-colors duration-300 text-center">{{ $tech->name }}</span>
                         </div>
-                    </div>
+                        @php $delay += 50; @endphp
+                    @endforeach
                 @endforeach
             </div>
         </div>
@@ -94,20 +89,24 @@
                 <h2 class="text-3xl font-bold mb-4">Experiência Profissional</h2>
                 <div class="w-20 h-1 bg-primary mx-auto rounded-full"></div>
             </div>
-            <div class="relative border-l-2 border-slate-800 ml-4 md:ml-0 md:left-1/2 md:-translate-x-1/2">
+            <div class="relative max-w-5xl mx-auto py-8">
+                <!-- Linha do Tempo Vertical -->
+                <div class="absolute left-[24px] md:left-1/2 transform md:-translate-x-1/2 top-0 bottom-0 w-1 bg-slate-800 rounded-full"></div>
+                
                 @foreach($experiences as $index => $exp)
-                    <div class="mb-12 relative">
-                        <!-- Dot -->
-                        <div class="absolute -left-2 md:left-1/2 md:-translate-x-1/2 w-4 h-4 bg-primary rounded-full border-4 border-dark"></div>
+                    <div class="relative flex items-center justify-between md:justify-normal w-full mb-12 {{ $index % 2 == 0 ? 'md:flex-row-reverse' : 'md:flex-row' }}">
+                        <!-- Bolinha Conectora -->
+                        <div class="absolute left-[24px] md:left-1/2 transform -translate-x-1/2 top-10 md:top-1/2 md:-translate-y-1/2 w-4 h-4 bg-primary rounded-full ring-[6px] ring-[#0f172a] z-10 shadow-[0_0_15px_rgba(59,130,246,0.5)]"></div>
                         
-                        <div class="ml-8 md:ml-0 md:w-5/12 {{ $index % 2 == 0 ? 'md:mr-auto md:pr-12 text-right' : 'md:ml-auto md:pl-12' }}" data-aos="{{ $index % 2 == 0 ? 'fade-right' : 'fade-left' }}">
-                            <div class="glass p-6 rounded-2xl hover:border-primary/50 transition">
-                                <span class="text-primary text-sm font-bold uppercase tracking-wider">
-                                    {{ $exp->start_date->format('M Y') }} - {{ $exp->is_current ? 'Atualmente' : ($exp->end_date ? $exp->end_date->format('M Y') : '') }}
+                        <!-- Conteúdo do Card -->
+                        <div class="w-full pl-16 md:pl-0 md:w-[calc(50%-3rem)] {{ $index % 2 == 0 ? 'md:text-right' : 'md:text-left' }}" data-aos="{{ $index % 2 == 0 ? 'fade-right' : 'fade-left' }}">
+                            <div class="glass p-8 rounded-3xl hover:border-primary/50 hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+                                <span class="inline-block text-primary text-sm font-bold uppercase tracking-widest mb-2">
+                                    {{ $exp->start_date->format('M Y') }} - {{ $exp->is_current ? 'ATUALMENTE' : ($exp->end_date ? $exp->end_date->format('M Y') : '') }}
                                 </span>
-                                <h3 class="text-xl font-bold mt-2">{{ $exp->role }}</h3>
-                                <p class="text-slate-300 font-medium">{{ $exp->company }}</p>
-                                <p class="text-slate-400 mt-4 text-sm">{{ $exp->description }}</p>
+                                <h3 class="text-2xl font-bold mb-1">{{ $exp->role }}</h3>
+                                <p class="text-slate-300 font-semibold mb-4">{{ $exp->company }}</p>
+                                <p class="text-slate-400 text-sm leading-relaxed">{{ $exp->description }}</p>
                             </div>
                         </div>
                     </div>
