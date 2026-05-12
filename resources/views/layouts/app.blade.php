@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ config('app.name', 'Portfólio') }}</title>
+    <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}">
     <!-- SEO -->
     <meta name="description" content="Portfólio Profissional de Giovani Bonfim - Desenvolvedor Full Stack especializado em sistemas internos e dashboards.">
     
@@ -97,9 +98,12 @@
     <nav class="fixed top-0 w-full z-50 glass">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
-                <div class="flex items-center">
-                    <span class="text-xl font-bold gradient-text">GB.dev</span>
-                </div>
+                <a href="#home" class="flex items-center space-x-3 group">
+                    <div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary/20 group-hover:border-primary transition-all shadow-lg group-hover:scale-110">
+                        <img src="{{ asset('img/logo_gb.png') }}" alt="GB Logo" class="w-full h-full object-cover">
+                    </div>
+                    <span class="text-xl font-bold gradient-text">Giovani Bonfim</span>
+                </a>
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-4">
                         <a href="#home" class="nav-link px-3 py-2 rounded-md text-sm font-medium hover:text-primary transition">Home</a>

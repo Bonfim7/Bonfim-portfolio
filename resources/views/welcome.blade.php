@@ -44,10 +44,10 @@
             </div>
             <div class="max-w-3xl mx-auto text-lg text-slate-400 leading-relaxed space-y-6" data-aos="fade-up" data-aos-delay="200">
                 <p>
-                    Com uma sólida trajetória vinda da área de operação e logística, realizei a transição para a tecnologia focando em resolver problemas reais de negócio. Minha experiência corporativa me permite entender as dores operacionais e transformá-las em sistemas eficientes.
+                    Desenvolvedor em início de carreira, com experiência prática em desenvolvimento e manutenção de sistemas internos. Atuo atualmente como Programador de Sistemas de Informação na FutFanatics, utilizando PHP, Laravel, JavaScript, MySQL, HTML, CSS e GitHub.
                 </p>
                 <p>
-                    Hoje, como desenvolvedor Full Stack, foco em stack PHP/Laravel para construir backends robustos e dashboards que facilitam a tomada de decisão. Tenho experiência em integrações ERP/WMS e automação de processos internos.
+                    Busco crescimento profissional na área de tecnologia, com foco em soluções eficientes, organização e aprendizado contínuo. Minha trajetória na logística me trouxe uma visão analítica única para resolver problemas de negócio através do código.
                 </p>
             </div>
         </div>
