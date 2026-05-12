@@ -1,7 +1,7 @@
 # 🚀 Giovani Bonfim
 
 💻 Desenvolvedor Full Stack  
-📍 São Paulo - SP  
+📍 Presidente Prudente - SP  
 🚀 PHP | Laravel | JavaScript | SQL | Docker
 
 ---
